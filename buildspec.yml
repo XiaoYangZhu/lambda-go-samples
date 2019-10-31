@@ -25,6 +25,7 @@ phases:
       #- ln -s ${CODEBUILD_SRC_DIR} ${SRC_DIR}
       #- cp -r ${CODEBUILD_SRC_DIR}/* ${SRC_DIR}
       #- cd ${SRC_DIR}
+      - export GOPATH=$GOPATH:${CODEBUILD_SRC_DIR}
       - cd ${CODEBUILD_SRC_DIR}
       - pwd
       - ls -al
