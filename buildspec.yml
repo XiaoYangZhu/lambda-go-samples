@@ -23,6 +23,8 @@ phases:
       #- ln -s "${CODEBUILD_SRC_DIR}" "/go/src/${PACKAGE}"
       - ln -s ${CODEBUILD_SRC_DIR} ${SRC_DIR}
       - cd ${SRC_DIR}
+      - pwd
+      - ls -al
       
       
       # Print all environment variables (handy for AWS CodeBuild logs)
