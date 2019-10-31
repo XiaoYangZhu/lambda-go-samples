@@ -23,11 +23,11 @@ phases:
       #- ln -s "${CODEBUILD_SRC_DIR}" "/go/src/${PACKAGE}"
       #- ls -al ${CODEBUILD_SRC_DIR}
       #- ln -s ${CODEBUILD_SRC_DIR} ${SRC_DIR}
-      - cp -r ${CODEBUILD_SRC_DIR}/* ${SRC_DIR}
-      - cd ${SRC_DIR}
+      #- cp -r ${CODEBUILD_SRC_DIR}/* ${SRC_DIR}
+      #- cd ${SRC_DIR}
       #- export GOPATH=$GOPATH:${CODEBUILD_SRC_DIR}
       - go env GOPATH
-      #- cd ${CODEBUILD_SRC_DIR}
+      - cd ${CODEBUILD_SRC_DIR}
       - pwd
       - ls -al
        
@@ -44,6 +44,8 @@ phases:
       #- cd "/go/src/${PACKAGE}"
 
       # Fetch all dependencies
+      - export GOBIN=$GOPATH/bin
+      - export PATH=$PATH:$GOBIN
       - go get -t ./...
       #- go get "github.com/aws/aws-lambda-go/lambda"
       #- go get "github.com/aws/aws-lambda-go/events"
