@@ -7,7 +7,7 @@ env:
     # The AWS CodeBuild IAM role must allow write access to it.
     S3_BUCKET: "lambda-deployment-artifacts-fw-golang-cicd"
     #PACKAGE: "github.com/XiaoYangZhu/lambda-go-samples"
-    RC_DIR: /go/src/handler
+    SRC_DIR: /usr/src
 
 phases:
 
