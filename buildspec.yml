@@ -21,11 +21,11 @@ phases:
       # application source code into that directory structure.
       #- mkdir -p "/go/src/$(dirname ${PACKAGE})"
       #- ln -s "${CODEBUILD_SRC_DIR}" "/go/src/${PACKAGE}"
-      - ls -al ${CODEBUILD_SRC_DIR}
-      - ln -s ${CODEBUILD_SRC_DIR} ${SRC_DIR}
-      - cp -r ${CODEBUILD_SRC_DIR}/* ${SRC_DIR}
-      - cd ${SRC_DIR}
-      #- cd ${CODEBUILD_SRC_DIR}
+      #- ls -al ${CODEBUILD_SRC_DIR}
+      #- ln -s ${CODEBUILD_SRC_DIR} ${SRC_DIR}
+      #- cp -r ${CODEBUILD_SRC_DIR}/* ${SRC_DIR}
+      #- cd ${SRC_DIR}
+      - cd ${CODEBUILD_SRC_DIR}
       - pwd
       - ls -al
       
@@ -43,11 +43,11 @@ phases:
       #- cd "/go/src/${PACKAGE}"
 
       # Fetch all dependencies
-      #- go get -t ./...
-      - go get "github.com/aws/aws-lambda-go/lambda"
-      - go get "github.com/aws/aws-lambda-go/events"
-      - go get "github.com/XiaoYangZhu/lambda-go-samples"
-      - go get "github.com/stretchr/testify/assert"
+      - go get -t ./...
+      #- go get "github.com/aws/aws-lambda-go/lambda"
+      #- go get "github.com/aws/aws-lambda-go/events"
+      #- go get "github.com/XiaoYangZhu/lambda-go-samples"
+      #- go get "github.com/stretchr/testify/assert"
 
       # Ensure code passes all lint tests
       - golint -set_exit_status
