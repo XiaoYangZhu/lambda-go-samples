@@ -21,6 +21,7 @@ phases:
       # application source code into that directory structure.
       #- mkdir -p "/go/src/$(dirname ${PACKAGE})"
       #- ln -s "${CODEBUILD_SRC_DIR}" "/go/src/${PACKAGE}"
+      - ls -al ${CODEBUILD_SRC_DIR}
       - ln -s ${CODEBUILD_SRC_DIR} ${SRC_DIR}
       - cd ${SRC_DIR}
       - pwd
