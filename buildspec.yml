@@ -51,6 +51,8 @@ phases:
       #- go get "github.com/aws/aws-lambda-go/events"
       #- go get "github.com/XiaoYangZhu/lambda-go-samples"
       #- go get "github.com/stretchr/testify/assert"
+      - go env GOPATH
+      - ls -al
 
       # Ensure code passes all lint tests
       - golint -set_exit_status
