@@ -23,15 +23,14 @@ phases:
       #- ln -s "${CODEBUILD_SRC_DIR}" "/go/src/${PACKAGE}"
       #- ls -al ${CODEBUILD_SRC_DIR}
       #- ln -s ${CODEBUILD_SRC_DIR} ${SRC_DIR}
-      #- cp -r ${CODEBUILD_SRC_DIR}/* ${SRC_DIR}
-      #- cd ${SRC_DIR}
-      - export GOPATH=$GOPATH:${CODEBUILD_SRC_DIR}
+      - cp -r ${CODEBUILD_SRC_DIR}/* ${SRC_DIR}
+      - cd ${SRC_DIR}
+      #- export GOPATH=$GOPATH:${CODEBUILD_SRC_DIR}
       - go env GOPATH
-      - cd ${CODEBUILD_SRC_DIR}
+      #- cd ${CODEBUILD_SRC_DIR}
       - pwd
       - ls -al
-      
-      
+       
       # Print all environment variables (handy for AWS CodeBuild logs)
       - env
 
