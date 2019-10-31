@@ -1,9 +1,7 @@
-package main_test
+package main
 
 import (
 	"testing"
-        "github.com/XiaoYangZhu/lambda-go-samples"
-        "main"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/stretchr/testify/assert"
 )
