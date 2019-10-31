@@ -17,7 +17,7 @@ func TestHandler(t *testing.T) {
 			// Test that the handler responds with the correct response
 			// when a valid name is provided in the HTTP body
 			request: events.APIGatewayProxyRequest{Body: "Paul"},
-			expect:  "Hello from FreeWhell[2019-10-31]: Paul",
+			expect:  "Hello from FreeWhell[2019-10-31]: Paul\n\n\n",
 			err:     nil,
 		},
 		{
