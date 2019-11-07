@@ -27,7 +27,7 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	}
 
 	return events.APIGatewayProxyResponse{
-		Body:       "\n\n\n********************************\nHello from FreeWhell[2019-10-31]: " + request.Body + "\n********************************\n\n\n",
+		Body:       "\n\n\n********************************\nHello from FreeWhell[2019-11-07]: " + request.Body + "\n********************************\n\n\n",
 		StatusCode: 200,
 	}, nil
 
